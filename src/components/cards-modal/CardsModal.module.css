@@ -1,0 +1,113 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 80%;
+  max-height: 90%;
+  position: relative;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+  overflow: none;
+}
+
+.modal img {
+  width: 60%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 5%;
+  margin-bottom: 1rem;
+}
+
+/* Descrição do autor e resolução */
+.modalInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .modal {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  .modal img {
+    width: 80%;
+  }
+
+  .modalInfo {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .closeButton {
+    font-size: 1.75rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .modal {
+    padding: 1rem;
+    max-width: 98%;
+  }
+
+  .modal img {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .modalInfo {
+    font-size: 0.9rem;
+  }
+
+  .closeButton {
+    font-size: 2rem;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
